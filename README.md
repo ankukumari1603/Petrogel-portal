@@ -1,81 +1,83 @@
-# React + Vite
+# 🏭 PETROGEL Plant & QC Management Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> A full-stack web application for managing plant operations, production, quality control, inventory, formulations, reports, alerts, and operational data.
 
-Currently, two official plugins are available:
+## 🚀 Project Overview
 
+PETROGEL Plant & QC Management Portal is a modern web-based management system designed to digitalize industrial plant operations and quality-control workflows.
 
-## React Compiler
+The portal provides a centralized platform for managing production activities, quality testing, inventory, customer requirements, reports, notifications, and user access.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Key Features
 
-## Expanding the Oxlint configuration
+- 📊 **Dashboard** — Operational overview and key metrics
+- 🏭 **Production Management** — Production instructions, batches and workflow
+- 🧪 **Quality Control** — In-process testing, final testing and QC release
+- 📦 **Inventory Management** — Stock and material tracking
+- 🧬 **Product & Formulation Management**
+- 📋 **Customer Requirements**
+- 📈 **Reports & Analytics**
+- 🔔 **Notifications & Alerts**
+- 👥 **User Management & Role-based Access**
+- 🔐 **Audit Trail**
+- 🔄 **Workflow & Sign-off**
+- ⚙️ **System Settings**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 📸 Screenshots
 
-# PETROGEL Plant & QC Portal
+### Dashboard
 
-React + Vite frontend with an Express, Mongoose, and MongoDB API.
+![Dashboard](screenshots/dashboard.png)
 
-## Configure MongoDB
+### Production Management
 
-1. Copy `.env.example` to `.env`.
-2. Set `MONGO_URI` to your MongoDB Atlas connection string. Keep credentials only in `.env`.
-3. Set `PORT=5000` and, when needed, set `CLIENT_ORIGIN=http://localhost:5173`.
+![Production](screenshots/production.png)
 
-Example local configuration:
+### Quality Control
 
-```env
-MONGO_URI=mongodb+srv://USERNAME:PASSWORD@CLUSTER.mongodb.net/petrogel_portal
-PORT=5000
-CLIENT_ORIGIN=http://localhost:5173
-```
+![Quality Control](screenshots/quality-control.png)
 
-## Run locally
+### Inventory
 
-Install dependencies:
+![Inventory](screenshots/inventory.png)
 
-```bash
-npm install
-```
+### Reports
 
-Run the backend:
+![Reports](screenshots/reports.png)
 
-```bash
-npm run server
-```
+## 🛠️ Technology Stack
 
-Run the frontend in a second terminal:
+### Frontend
+- React
+- Vite
+- JavaScript
+- CSS
 
-```bash
-npm run dev
-```
+### Backend
+- Node.js
+- Express.js
+- REST APIs
 
-Or run both with:
+### Database
+- MongoDB Atlas
+- Mongoose
 
-```bash
-npm run dev:all
-```
+### Development Tools
+- Git
+- GitHub
+- VS Code
+- GitHub Copilot
 
-The API is available at `http://localhost:5000/api` and the Vite proxy makes it available to the frontend at `/api`.
-
-Health check:
+## 🏗️ Architecture
 
 ```text
-GET http://localhost:5000/api/health
-```
-
-The response includes `status: "ok"` and a `database` value of `connected` or `unavailable`.
-
-## API resources
-
-CRUD routes are available for `/api/customers`, `/api/products`, `/api/formulations`, `/api/production`, `/api/qc`, `/api/lab`, `/api/inventory`, and `/api/requirements`. Alerts support `GET /api/alerts` and `PUT /api/alerts/:id`. Dashboard totals are served by `GET /api/dashboard`.
-
-The frontend loads API data first and keeps the existing local demo snapshot as an offline fallback when MongoDB is unavailable. Once MongoDB is configured, CRUD mutations are written through to the API.
-
-## Validation
-
-```bash
-npm run lint
-npm run build
-```
+React + Vite
+     │
+     ▼
+Express.js REST API
+     │
+     ▼
+Mongoose
+     │
+     ▼
+MongoDB Atlas

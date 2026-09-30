@@ -81,3 +81,34 @@ Mongoose
      │
      ▼
 MongoDB Atlas
+```
+
+## 🤖 AI Chatbot
+
+An AI-powered chatbot integrated into the PETROGEL Plant & QC Management Portal using Google Gemini.
+
+### Chatbot Features
+
+- 💬 Natural-language interaction
+- 🤖 Google Gemini-powered responses
+- ⚛️ React-based chatbot interface
+- 🟢 Node.js + Express backend integration
+- 🔗 Dedicated `/api/chat` API
+- ⚠️ Error handling for AI service failures
+- 🔐 Designed for future secure integration with authorized portal data
+
+### Chatbot Architecture
+
+```text
+User
+↓
+React Chatbot
+↓
+Node.js / Express `/api/chat`
+↓
+Google Gemini
+↓
+AI Response
+```
+
+> **Current scope:** The chatbot currently provides general assistance about the PetroGel portal. Live inventory, production, QC, and customer data are not exposed to the chatbot yet. Future integration will use server-side authentication, permissions, and read-only data access.

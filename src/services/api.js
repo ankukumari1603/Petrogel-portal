@@ -24,6 +24,7 @@ function toRecordArray(payload, type) {
 export const api = {
   getHealth: () => request('/health'),
   getDashboard: () => request('/dashboard'),
+  chat: (messages) => request('/chat', { method: 'POST', body: JSON.stringify({ messages }) }),
   list: async (type) => toRecordArray(await request(`/${endpointMap[type]}`), type),
   create: (type, record) => request(`/${endpointMap[type]}`, { method: 'POST', body: JSON.stringify(record) }),
   update: (type, id, record) => request(`/${endpointMap[type]}/${encodeURIComponent(id)}`, { method: 'PUT', body: JSON.stringify(record) }),

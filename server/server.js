@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { connectDatabase } from './config/db.js'
+import chatRoutes from './routes/chatRoutes.js'
 import resourceRoutes from './routes/resourceRoutes.js'
 
 // Resolve relative to this file (not process.cwd()) so the server finds the root .env regardless of the directory it was launched from.
@@ -18,6 +19,7 @@ let server
 app.use(cors({ origin: process.env.CLIENT_ORIGIN ? process.env.CLIENT_ORIGIN.split(',').map((origin) => origin.trim()) : true }))
 app.use(express.json({ limit: '1mb' }))
 app.get('/api/health', (req, res) => res.json({ status: 'ok', database: mongoose.connection.readyState === 1 ? 'connected' : 'unavailable' }))
+app.use('/api/chat', chatRoutes)
 app.use('/api', (req, res, next) => {
   if (req.path === '/health') return next()
   if (mongoose.connection.readyState !== 1) return res.status(503).json({ message: 'MongoDB is unavailable. Configure MONGO_URI and start MongoDB.' })

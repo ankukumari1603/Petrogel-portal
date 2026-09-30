@@ -19,6 +19,7 @@ import DataModule from './pages/DataModule.jsx'
 import Reports from './pages/Reports.jsx'
 import Settings from './pages/Settings.jsx'
 import QcModule from './pages/QcModule.jsx'
+import Chatbot from './components/Chatbot.jsx'
 import { PortalDataProvider } from './data/PortalDataContext.jsx'
 import './App.css'
 
@@ -58,6 +59,7 @@ function App() {
             <Route path="/settings" element={<Settings />} />
             </Routes>
           </main>
+          <Chatbot />
         </div>
       </PortalDataProvider>
     </BrowserRouter>
